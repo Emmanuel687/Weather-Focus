@@ -11,10 +11,11 @@ const Weather = () => {
               className="form-control"
               type="text"
               placeholder="Input City"
+              autoFocus="on"
             />
           </div>
           <div className="col-3">
-            <input className="btn btn-primary" type="submit" />
+            <input className="btn btn-primary w-100" type="submit" />
           </div>
         </div>
       </form>
@@ -24,18 +25,19 @@ const Weather = () => {
         <li>Most Cloudy</li>
       </ul>
 
-      <div className="row">
+      <div className="row mt-3">
         <div className="col-6">
           <img
             src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
             alt="mostly cloudy"
           />
-          5°C
+         <span className="temperature">5</span>
+         <span className="unit">°C</span>
         </div>
         <div className="col-6">
           <ul>
-            <li>Precipitation: 15%</li>
-            <li>Humidity: 72%</li>
+            <li>Precipitation:- 15%</li>
+            <li>Humidity:- 72%</li>
             <li>Wind:-13Km/hr </li>
           </ul>
         </div>
