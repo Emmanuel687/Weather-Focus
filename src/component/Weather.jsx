@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 const Weather = () => {
   const [city, setCity] = useState("");
   const [weather, setWeather] = useState("");
+  const[loading,setLoading] = useState(false)
 
   //API Credentials
   const apiKey = "96ad27349a64ea1dcdfbe6f4d458c085";
@@ -17,6 +18,7 @@ const Weather = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setLoading(true)
 
     axios
       .get(apiUrl)
@@ -40,6 +42,7 @@ const Weather = () => {
 
   return (
     <div className="weather">
+        
       {/* Form */}
       <form onSubmit={handleSubmit}>
         <div className="row">
@@ -85,6 +88,7 @@ const Weather = () => {
           </ul>
         </div>
       </div>
+      
     </div>
   );
 };
