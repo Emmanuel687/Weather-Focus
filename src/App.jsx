@@ -1,9 +1,9 @@
+import Weather from "./component/Weather";
 function App() {
   return (
-    <div>
-      <div class="container py-4 px-3 mx-auto">
-        <h1>Hello, Bootstrap and Vite!</h1>
-        <button class="btn btn-primary">Primary button</button>
+    <div className="app">
+      <div className="container">
+        <Weather />
       </div>
     </div>
   );
