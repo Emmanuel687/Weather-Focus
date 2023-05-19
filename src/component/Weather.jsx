@@ -66,14 +66,14 @@ const Weather = () => {
           <h1>{weather.city}</h1>
           <ul>
             <li>Wednesday 07:00</li>
-            <li>{weather.description}</li>
+            <li className="text-capitalize">{weather.description}</li>
           </ul>
 
           <div className="row mt-3">
             <div className="col-6">
               <img
                 src={`https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png`}
-                alt="mostly cloudy"
+                alt={weather.description}
               />
               <span className="temperature">{weather.temperature}</span>
               <span className="unit">°C</span>
