@@ -31,7 +31,7 @@ const Weather = () => {
           humidity: weatherData.main.humidity,
           wind: weatherData.wind.speed,
           icon: weatherData.weather[0].icon,
-          temperature: weatherData.main.temp,
+          temperature: Math.round(weatherData.main.temp),
         });
       })
       .catch((error) => {
