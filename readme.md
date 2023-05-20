@@ -52,6 +52,7 @@ Contributions are welcome! If you find any issues or have suggestions for improv
 The Weather App was developed as a learning project and draws inspiration from various weather applications available on the web. Special thanks to the developers of React and the libraries used in this project for their amazing work.
 
 # Contact
-If you have any questions or feedback, feel free to reach out to me at your-email@example.com.
+If you have any questions or feedback, feel free to reach out to me at 
+koechemmanuel@gmail.com
 
 Thank you for using the Weather App! Enjoy checking the weather at your fingertips!
