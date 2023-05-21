@@ -52,7 +52,7 @@ This project is licensed under the MIT License. Feel free to modify and use it a
 Contributions are welcome! If you find any issues or have suggestions for improvement, please open an issue or submit a pull request.
 
 # Acknowledgments
-The Weather App was developed as a learning project and draws inspiration from various weather applications available on the web. Special thanks to the developers of React and the libraries used in this project for their amazing work.
+The Weather App was developed as a learning project and draws inspiration from various weather applications available on the web. Special thanks to the developers of React and the libraries used in this project for their amazing work..
 
 # Contact
 If you have any questions or feedback, feel free to reach out to me at 
