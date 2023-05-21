@@ -42,7 +42,7 @@ Axios: A promise-based HTTP client used to make API requests.
 
 CSS: Styling the app for an enhanced user interface.
 
-API Usage
+API Usage:-
 The Weather App relies on an external weather API to fetch weather data. The API used can be configured in the .env file, and you can use any weather API of your choice by updating the API endpoint and request parameters in the code.
 
 # License
