@@ -1,24 +1,23 @@
-// import React from "react";
+import React from 'react'
 
-// function WeatherDate({ currentDate }) {
-// //  const days = ["Sunday" , "Monday" , "Tuesday" , "Wednesday" , "Thursday" , "Friday" , "Saturday"]
+function WeatherDate({currentDate}) {
+    let date = new Date(currentDate*1000);
 
-// //   const day = days[currentDate.getDay()]
-// //   const hours = currentDate.getHours();
-// //   const minutes = currentDate.getMinutes();
-// //   const month = currentDate.getMonth();
-// //   if(hours<10){
-// //     hours=`0${hours}`
-// //   }
+    let day = date.getDay();
+    let month = date.getMonth();
+    let year = date.getFullYear();
+    let hour = date.getHours()
+    let minutes = date.getMinutes();
 
-// //   if(minutes<0){
-// //     minutes=`0${minutes}`
-// //   }
+    console.log(`Day is ${date}`)
+    console.log(`Hour is ${hour}`)
+    console.log(`Minutes is ${minutes}`)
+    console.log(`Day is ${day}`)
+    console.log(`Month is ${month}`)
+    console.log(`Year is ${year}`)
+  return (
+    <div>{hour}:{minutes}</div>
+  )
+}
 
-//   return (
-//     <div>
-//     </div>
-//   );
-// }
-
-// export default WeatherDate;
+export default WeatherDate
