@@ -1,20 +1,43 @@
-import React from 'react';
+import React from "react";
 import "./WeatherTemperature.css";
-import { useState } from 'react';
+import { useState } from "react";
 
+function WeatherTemperature({ weather }) {
+  const [units, setUnits] = useState("celsius");
+  const handleConvertFahreniet = (e) => {
+    e.preventDefault();
+    setUnits("fahreneit");
+  };
+  const handleConvertCelcius = (e) => {
+    e.preventDefault();
+    setUnits("celsius");
+  };
+ let fahreneit = (weather * 9/5)+32;
 
-function WeatherTemperature({weather}) {
-
-  
-  return (
-    <div>
-          <span className="temperature">{weather}</span>
-          <span className="unit">°C</span>
-          <span className="unit" >°F</span>
-
-
-    </div>
-  )
+  if (units === "celsius") {
+    return (
+      <div>
+        <span className="temperature">{fahreneit}</span>
+        <span className="unit">
+          °C |{" "}
+          <a href="/" onClick={handleConvertFahreniet}>
+            F
+          </a>
+        </span>
+      </div>
+    );
+  } else {
+    return (
+      <div>
+        <span className="temperature">{weather}</span>
+        <span className="unit">
+            <a href="/" onClick={handleConvertCelcius}>°C</a>
+           |{" "}
+            F
+        </span>
+      </div>
+    );
+  }
 }
 
-export default WeatherTemperature
+export default WeatherTemperature;
