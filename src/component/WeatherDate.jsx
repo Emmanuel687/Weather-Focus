@@ -4,7 +4,7 @@ function WeatherDate({currentDate}) {
     let date = new Date(currentDate*1000);
     
     let daysWeek = [
-        "Sunday", "Monday", "Tuesday" , "Wenesday", "Thursday", "Friday","Saturday"
+        "Sunday", "Monday", "Tuesday" , "Wednesday", "Thursday", "Friday","Saturday"
     ]
 
     let day = date.getDay();
@@ -23,12 +23,12 @@ function WeatherDate({currentDate}) {
     }
     
 
-    console.log(`Day is ${date}`)
-    console.log(`Hour is ${hour}`)
-    console.log(`Minutes is ${minutes}`)
-    console.log(`Day is ${day}`)
-    console.log(`Month is ${month}`)
-    console.log(`Year is ${year}`)
+    // console.log(`Day is ${date}`)
+    // console.log(`Hour is ${hour}`)
+    // console.log(`Minutes is ${minutes}`)
+    // console.log(`Day is ${day}`)
+    // console.log(`Month is ${month}`)
+    // console.log(`Year is ${year}`)
   return (
     <div>{dayWeek}  {hour}:{minutes}</div>
   )

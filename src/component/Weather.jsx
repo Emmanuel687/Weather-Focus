@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Weather.css";
 import WeatherDate from "./WeatherDate";
+import WeatherDetails from "./WeatherDetails";
 import axios from "axios";
 
 const Weather = () => {
@@ -24,12 +25,12 @@ const Weather = () => {
       .get(apiUrl)
       .then((response) => {
         const weatherData = response.data;
-        
+
         // Handle the weather data as per your requirements
         setWeather({
           city: weatherData.name,
           description: weatherData.weather[0].description,
-          date:new Date(weatherData.dt*1000),
+          date: new Date(weatherData.dt * 1000),
           precipitation: null,
           humidity: weatherData.main.humidity,
           wind: weatherData.wind.speed,
@@ -63,39 +64,25 @@ const Weather = () => {
 
   return (
     <div className="weather">
+
       {submitted ? (
         <div>
           {form}
           <h1>{weather.city}</h1>
           <ul>
             <li>
-              <WeatherDate currentDate = {weather.date}/>
+              <WeatherDate currentDate={weather.date} />
             </li>
             <li className="text-capitalize">{weather.description}</li>
           </ul>
+          <WeatherDetails weather={weather} />
 
-          <div className="row mt-3">
-            <div className="col-6">
-              <img
-                src={`https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png`}
-                alt={weather.description}
-              />
-              <span className="temperature">{weather.temperature}</span>
-              <span className="unit">°C</span>
-            </div>
-            <div className="col-6">
-              <ul>
-                <li>Precipitation:- {weather.precipitation}%</li>
-                <li>Humidity:- {weather.humidity}%</li>
-                <li>Wind:-{weather.wind}Km/hr </li>
-              </ul>
-            </div>
-          </div>
+
+
+         
         </div>
       ) : (
-        <div>
-          {form}
-        </div>
+        <div>{form}</div>
       )}
     </div>
   );
