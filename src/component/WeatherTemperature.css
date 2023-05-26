@@ -19,3 +19,6 @@
     text-decoration: none;
     color: blueviolet;
 }
+.temperature-link:hover{
+    color: cadetblue;
+}
