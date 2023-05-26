@@ -1,29 +1,31 @@
 import React from "react";
-import "./WeatherDetails.css";
 import WeatherTemperature from "./WeatherTemperature";
+import "./WeatherDetails.css";
+
 
 // Received Weather Props from Weather.jsx component
 function WeatherDetails({ weather }) {
   return (
-    <div className="weather">
-      <div className="row mt-3">
-        <div className="col-6">
-          <img
-            src={`http://openweathermap.org/img/wn/${weather.icon}@2x.png`}
-            alt={weather.description}
-          />
-        {/* Passed weather Temperature props to Weather Component */}
+    <>
+
+    <div className="row mt-3">
+            <div className="col-6">
+              <img
+                src={`https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png`}
+                alt={weather.description}
+              />
           <WeatherTemperature weather={weather.temperature} />
-        </div>
-        <div className="col-6">
-          <ul>
-            <li>Precipitation:- {weather.precipitation}%</li>
-            <li>Humidity:- {weather.humidity}%</li>
-            <li>Wind:-{weather.wind}Km/hr </li>
-          </ul>
-        </div>
-      </div>
-    </div>
+           
+            </div>
+            <div className="col-6">
+              <ul>
+                <li>Precipitation:- {weather.precipitation}%</li>
+                <li>Humidity:- {weather.humidity}%</li>
+                <li>Wind:-{weather.wind}Km/hr </li>
+              </ul>
+            </div>
+          </div>
+    </>
   );
 }
 
