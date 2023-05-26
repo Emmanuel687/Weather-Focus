@@ -7,14 +7,19 @@ function WeatherDetails({ weather }) {
   return (
     <>
       <div className="row mt-3">
-        <div className="col-6">
-          <img
-            src={`https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png`}
+      <div className="col-4">
+        <img className="weather-icon"
+            src={`http://openweathermap.org/img/wn/${weather.icon}.png
+            `}
             alt={weather.description}
           />
+
+        </div>
+        <div className="col-4">
           <WeatherTemperature weather={weather.temperature} />
         </div>
-        <div className="col-6">
+       
+        <div className="col-4">
           <ul>
             <li>Precipitation:- {weather.precipitation}%</li>
             <li>Humidity:- {weather.humidity}%</li>

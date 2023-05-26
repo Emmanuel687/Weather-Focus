@@ -25,12 +25,12 @@ const Weather = () => {
       .get(apiUrl)
       .then((response) => {
         const weatherData = response.data;
-        
+
         // Handle the weather data as per your requirements
         setWeather({
           city: weatherData.name,
           description: weatherData.weather[0].description,
-          date:new Date(weatherData.dt*1000),
+          date: new Date(weatherData.dt * 1000),
           precipitation: null,
           humidity: weatherData.main.humidity,
           wind: weatherData.wind.speed,
@@ -70,20 +70,16 @@ const Weather = () => {
           <h1>{weather.city}</h1>
           <ul>
             <li>
-              <WeatherDate currentDate = {weather.date}/>
+              
+              <WeatherDate currentDate={weather.date} />
             </li>
             <li className="text-capitalize">{weather.description}</li>
           </ul>
 
-          
           <WeatherDetails weather={weather} />
         </div>
-
-
       ) : (
-        <div>
-          {form}
-        </div>
+        <div>{form}</div>
       )}
     </div>
   );
