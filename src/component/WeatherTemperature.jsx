@@ -2,6 +2,8 @@ import React from "react";
 import "./WeatherTemperature.css";
 import { useState } from "react";
 
+
+// Received Weather props from Weather Details Component
 function WeatherTemperature({ weather }) {
   const [units, setUnits] = useState("celsius");
   const handleConvertFahreniet = (e) => {
