@@ -65,7 +65,7 @@ const Weather = () => {
 
   return (
     <div className="weather">
-      {/*Ternary Operator Used Show Form If Submitted */}
+      {/*Ternary Operator Used to Show Form If Submitted */}
       {submitted ? (
         <div>
           {form}
@@ -78,7 +78,9 @@ const Weather = () => {
           </ul>
           <WeatherDetails weather={weather} />
         </div>
-      ) : (
+      ) :
+   {/*Ternary Operator Shows else if not Submitted */}
+      (
         <div>{form}</div>
       )}
     </div>
