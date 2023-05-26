@@ -27,7 +27,7 @@ function WeatherTemperature({ weather }) {
         <span className="temperature">{fahreneit}</span>
         <span className="unit">
           °C |{" "}
-          <a href="/" onClick={handleConvertFahreniet}>
+          <a className="temperature-link" href="/" onClick={handleConvertFahreniet}>
             F
           </a>
         </span>
@@ -38,7 +38,7 @@ function WeatherTemperature({ weather }) {
       <div>
         <span className="temperature">{weather}</span>
         <span className="unit">
-            <a href="/" onClick={handleConvertCelcius}>°C</a>
+            <a className="temperature-link" href="/" onClick={handleConvertCelcius}>°C</a>
            |{" "}
             F
         </span>

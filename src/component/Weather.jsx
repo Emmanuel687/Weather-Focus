@@ -12,21 +12,24 @@ const Weather = () => {
   //API Credentials
   const apiKey = "96ad27349a64ea1dcdfbe6f4d458c085";
   const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
+  
 
+  // Handles the city event on the form input 
   const handleCity = (e) => {
     setCity(e.target.value);
   };
-
+  // Functio that handles form submission
   const handleSubmit = (e) => {
     e.preventDefault();
     setSubmitted(true); // Update form submission status
 
+    // Fetch Data From Api
     axios
       .get(apiUrl)
       .then((response) => {
         const weatherData = response.data;
 
-        // Handle the weather data as per your requirements
+        // Set state of current Weather Data
         setWeather({
           city: weatherData.name,
           description: weatherData.weather[0].description,
@@ -63,6 +66,7 @@ const Weather = () => {
   );
 
   return (
+    // Ternary Operator set to show form and weather details if
     <div className="weather">
       {submitted ? (
         <div>
@@ -70,7 +74,7 @@ const Weather = () => {
           <h1>{weather.city}</h1>
           <ul>
             <li>
-              
+
               <WeatherDate currentDate={weather.date} />
             </li>
             <li className="text-capitalize">{weather.description}</li>
@@ -78,7 +82,8 @@ const Weather = () => {
 
           <WeatherDetails weather={weather} />
         </div>
-      ) : (
+      ) :     // Ternary Operator set to show only form when form is not submited
+      (
         <div>{form}</div>
       )}
     </div>
