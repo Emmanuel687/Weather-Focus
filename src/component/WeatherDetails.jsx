@@ -12,7 +12,7 @@ function WeatherDetails({ weather }) {
             src={`http://openweathermap.org/img/wn/${weather.icon}@2x.png`}
             alt={weather.description}
           />
-
+        {/* Passed weather Temperature props to Weather Component */}
           <WeatherTemperature weather={weather.temperature} />
         </div>
         <div className="col-6">
