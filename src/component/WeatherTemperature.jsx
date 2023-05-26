@@ -3,9 +3,11 @@ import "./WeatherTemperature.css";
 import { useState } from "react";
 
 
-// Received Weather props from Weather Details Component
+// Received Temperature props from Weather Details Component
 function WeatherTemperature({ weather }) {
+
   const [units, setUnits] = useState("celsius");
+
   const handleConvertFahreniet = (e) => {
     e.preventDefault();
     setUnits("fahreneit");
@@ -14,6 +16,8 @@ function WeatherTemperature({ weather }) {
     e.preventDefault();
     setUnits("celsius");
   };
+
+//  Convert to Fahreneit 
  let fahreneit = (weather * 9/5)+32;
 
   if (units === "celsius") {
