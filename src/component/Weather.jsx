@@ -72,16 +72,18 @@ const Weather = () => {
           <h1>{weather.city}</h1>
           <ul>
             <li>
+              {/* Passed Date Props to WeatherDate Component */}
+
               <WeatherDate currentDate={weather.date} />
             </li>
             <li className="text-capitalize">{weather.description}</li>
           </ul>
           <WeatherDetails weather={weather} />
         </div>
-      ) :
-   {/*Ternary Operator Shows else if not Submitted */}
-      (
-        <div>{form}</div>
+      ) : (
+        {
+          /*Ternary Operator Shows else if not Submitted */
+        }(<div>{form}</div>)
       )}
     </div>
   );
