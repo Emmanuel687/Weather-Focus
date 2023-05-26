@@ -7,7 +7,7 @@ import axios from "axios";
 const Weather = () => {
   const [city, setCity] = useState("");
   const [weather, setWeather] = useState("");
-  const [submitted, setSubmitted] = useState(false); // Track form submission
+  const [submitted, setSubmitted] = useState(false);
 
   //API Credentials
   const apiKey = "96ad27349a64ea1dcdfbe6f4d458c085";
@@ -17,16 +17,17 @@ const Weather = () => {
     setCity(e.target.value);
   };
 
+  // Update form submission status
   const handleSubmit = (e) => {
     e.preventDefault();
-    setSubmitted(true); // Update form submission status
+    setSubmitted(true);
 
     axios
       .get(apiUrl)
       .then((response) => {
         const weatherData = response.data;
 
-        // Handle the weather data as per your requirements
+        // Handle the weather data as per requirements
         setWeather({
           city: weatherData.name,
           description: weatherData.weather[0].description,
@@ -64,7 +65,7 @@ const Weather = () => {
 
   return (
     <div className="weather">
-
+      {/*Ternary Operator Used Show Form If Submitted */}
       {submitted ? (
         <div>
           {form}
@@ -76,10 +77,6 @@ const Weather = () => {
             <li className="text-capitalize">{weather.description}</li>
           </ul>
           <WeatherDetails weather={weather} />
-
-
-
-         
         </div>
       ) : (
         <div>{form}</div>
