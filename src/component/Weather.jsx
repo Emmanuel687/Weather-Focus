@@ -9,10 +9,11 @@ const Weather = () => {
   const [weather, setWeather] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
-  //API Credentials
+  //API Credentials & Url
   const apiKey = "96ad27349a64ea1dcdfbe6f4d458c085";
   const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
 
+  // Function to handle City Event
   const handleCity = (e) => {
     setCity(e.target.value);
   };
@@ -22,11 +23,11 @@ const Weather = () => {
     e.preventDefault();
     setSubmitted(true);
 
+  // Fetch Data From Api
     axios
       .get(apiUrl)
       .then((response) => {
         const weatherData = response.data;
-
         // Handle the weather data as per requirements
         setWeather({
           city: weatherData.name,
@@ -78,6 +79,7 @@ const Weather = () => {
             </li>
             <li className="text-capitalize">{weather.description}</li>
           </ul>
+          {/* Passed weather Props to WeatherDate Component */}
           <WeatherDetails weather={weather} />
         </div>
       ) : (
