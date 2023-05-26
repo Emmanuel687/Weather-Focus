@@ -10,11 +10,11 @@ function WeatherDate({currentDate}) {
         "Sunday", "Monday", "Tuesday" , "Wednesday", "Thursday", "Friday","Saturday"
     ]
     
-    
+    // Extracted Date Details from UTC Format
     let day = date.getDay();
     let hour = date.getHours()
     let minutes = date.getMinutes();
-    let dayWeek = daysWeek.at(day)
+    let dayWeek = daysWeek.at(day)   
      
     if(minutes<10){
         minutes= `0${minutes}`
